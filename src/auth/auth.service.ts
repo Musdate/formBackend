@@ -20,7 +20,7 @@ export class AuthService {
 
     try {
 
-      const newUser = new this.userModel(createUserDto );
+      const newUser = new this.userModel( createUserDto );
       return await newUser.save();
 
     } catch (error) {

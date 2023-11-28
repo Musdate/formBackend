@@ -3,6 +3,7 @@ import { AuthModule } from './auth/auth.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ProductoModule } from './producto/producto.module';
+import { ComercialReqModule } from './comercial-req/comercial-req.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { ProductoModule } from './producto/producto.module';
       dbName: process.env.MONGO_DB_NAME
     }),
     AuthModule,
-    ProductoModule
+    ProductoModule,
+    ComercialReqModule
   ],
   controllers: [],
   providers: [],
