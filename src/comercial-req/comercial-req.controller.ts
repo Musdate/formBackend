@@ -19,7 +19,7 @@ export class ComercialReqController {
   }
 
   @Get()
-  @UseGuards( AuthGuard )
+  // @UseGuards( AuthGuard )
   findAll() {
     return this.comercialReqService.findAll();
   }

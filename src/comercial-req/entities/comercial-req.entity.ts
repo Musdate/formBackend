@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Producto } from "src/producto/entities/producto.entity";
 
 @Schema()
 export class ComercialReq {
@@ -6,29 +7,11 @@ export class ComercialReq {
     _id?: string;
 
     @Prop({ required: true })
-    producto: string;
+    nombreSolicitud: string;
 
-    @Prop({ required: true, default: 0 })
-    cantidad: number;
-        
-    @Prop({ required: false })
-    formatoBotella: string;
-        
-    @Prop({ required: false })
-    tipoVino: string;
-        
-    @Prop({ required: false })
-    anioCosecha: string;
-    
-    @Prop({ required: false })
-    cepa: string;
-        
-    @Prop({ required: false })
-    tipoCierre: string;
-        
-    @Prop({ required: false })
-    etiqueta: string;
-        
+    @Prop({ required: true })
+    productos: Producto[];
+
     @Prop({ required: false })
     fechaEnvio: string;
         

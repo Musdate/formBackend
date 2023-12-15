@@ -1,30 +1,13 @@
-import { IsEmail, IsInt, IsString, MinLength } from "class-validator";
+import { IsArray, IsEmail, IsInt, IsString, MinLength } from "class-validator";
+import { Producto } from "src/producto/entities/producto.entity";
 
 export class CreateComercialReqDto {
 
     @IsString()
-    producto: string;
+    nombreSolicitud: string;
 
-    @IsInt()
-    cantidad: number;
-    
-    @IsString()
-    formatoBotella: string;
-    
-    @IsString()
-    tipoVino: string;
-    
-    @IsString()
-    anioCosecha: string;
-    
-    @IsString()
-    cepa: string;
-    
-    @IsString()
-    tipoCierre: string;
-    
-    @IsString()
-    etiqueta: string;
+    @IsArray()
+    productos: Producto[];
     
     @IsString()
     fechaEnvio: string;

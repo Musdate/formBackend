@@ -3,23 +3,31 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 @Schema()
 export class Producto {
 
-    // _id: string;
+    _id?: string;
 
     @Prop({ required: true })
-    name: string;
+    producto: string;
     
     @Prop({ required: true })
-    cosecha: string;
+    cantidad: number;
     
     @Prop({ required: true })
-    formato: string;
+    formatoBotella: string;
     
     @Prop({ required: true })
-    tipoBotella: string;
+    tipoVino: string;
+
+    @Prop({ required: true })
+    anioCosecha: string;
+
+    @Prop({ required: true })
+    cepa: string;
+
+    @Prop({ required: true })
+    tipoCierre: string;
     
     @Prop({ required: true })
     etiqueta: string;
-
 }
 
 export const ProductoSchema = SchemaFactory.createForClass ( Producto );
