@@ -6,6 +6,8 @@ import {
 import { InjectModel } from '@nestjs/mongoose';
 import { ComercialReq } from './entities/comercial-req.entity';
 import { Model } from 'mongoose';
+import { MailerService } from 'src/mailer/mailer.service';
+
 
 @Injectable()
 export class ComercialReqService {
@@ -13,6 +15,7 @@ export class ComercialReqService {
   constructor(
     @InjectModel( ComercialReq.name )
     private comercialReqModel: Model<ComercialReq>,
+    private readonly mailerService: MailerService
   ) { }
 
   create(createComercialReqDto: CreateComercialReqDto): Promise<ComercialReq> {

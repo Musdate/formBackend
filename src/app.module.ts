@@ -18,6 +18,4 @@ import { ComercialReqModule } from './comercial-req/comercial-req.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {
-
-}
+export class AppModule { }

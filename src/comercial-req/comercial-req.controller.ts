@@ -5,7 +5,6 @@ import {
   CreateComercialReqDto,
   UpdateComercialReqDto
 } from './dto';
-import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 
 @Controller('comercial-req')
@@ -38,4 +37,5 @@ export class ComercialReqController {
   remove(@Param('id') id: string) {
     return this.comercialReqService.remove(+id);
   }
+
 }
