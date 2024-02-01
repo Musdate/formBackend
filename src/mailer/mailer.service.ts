@@ -22,7 +22,7 @@ export class MailerService {
 
         } catch (error) {
 
-            console.log('email error: ', error);
+            console.log('Email error: ', error);
 
         }
         
