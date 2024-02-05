@@ -4,6 +4,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ProductoModule } from './producto/producto.module';
 import { ComercialReqModule } from './comercial-req/comercial-req.module';
+import { InternalReqModule } from './internal-req/internal-req.module';
+import { GenericReqModule } from './generic-req/generic-req.module';
 
 @Module({
   imports: [
@@ -13,7 +15,9 @@ import { ComercialReqModule } from './comercial-req/comercial-req.module';
     }),
     AuthModule,
     ProductoModule,
-    ComercialReqModule
+    ComercialReqModule,
+    InternalReqModule,
+    GenericReqModule
   ],
   controllers: [],
   providers: [],
