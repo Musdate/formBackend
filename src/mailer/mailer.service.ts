@@ -32,8 +32,7 @@ export class MailerService {
 
             const email = await this.nestMailerService.sendMail({
                 from:'muestras@bphr.cl',
-                // to: mailList,
-                to: 'bastiantroncoso97@gmail.com',
+                to: mailList,
                 subject: 'Muestra Baron Philippe de Rothschild',
                 //text: '',
                 attachments: [
