@@ -23,6 +23,7 @@ export class ComercialReqService {
     try {
 
       const newComercialReq = new this.comercialReqModel( createComercialReqDto );
+      this.mailerService.sendMail(newComercialReq);
       return newComercialReq.save();
 
     } catch (error) {

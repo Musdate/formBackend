@@ -20,6 +20,7 @@ export class InternalReqService {
     try {
 
       const newInternalReq = new this.internalReqModel( createInternalReqDto );
+      this.mailerService.sendMail(newInternalReq);
       return newInternalReq.save();
 
     } catch (error) {

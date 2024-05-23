@@ -6,6 +6,7 @@ import { ProductoModule } from './producto/producto.module';
 import { ComercialReqModule } from './comercial-req/comercial-req.module';
 import { InternalReqModule } from './internal-req/internal-req.module';
 import { GenericReqModule } from './generic-req/generic-req.module';
+import { PdfModule } from './pdf/pdf.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { GenericReqModule } from './generic-req/generic-req.module';
     ProductoModule,
     ComercialReqModule,
     InternalReqModule,
-    GenericReqModule
+    GenericReqModule,
+    PdfModule
   ],
   controllers: [],
   providers: [],

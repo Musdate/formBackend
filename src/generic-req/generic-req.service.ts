@@ -20,6 +20,7 @@ export class GenericReqService {
     try {
 
       const newGenericReq = new this.genericReqModel( createGenericReqDto );
+      this.mailerService.sendMail(newGenericReq);
       return newGenericReq.save();
 
     } catch (error) {
