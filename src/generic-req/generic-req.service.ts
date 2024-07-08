@@ -31,8 +31,9 @@ export class GenericReqService {
 
   }
 
-  findAll(): Promise<GenericReq[]> {
-    return this.genericReqModel.find();
+  findAll(sortBy: string, sortOrder: 'asc' | 'desc'): Promise<GenericReq[]> {
+    const order = sortOrder === 'asc' ? 1 : -1;
+    return this.genericReqModel.find().sort({ [sortBy]: order }).exec();
   }
 
   findOne(id: number) {

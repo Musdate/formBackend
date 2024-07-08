@@ -34,8 +34,9 @@ export class ComercialReqService {
 
   }
 
-  findAll(): Promise<ComercialReq[]> {
-    return this.comercialReqModel.find();
+  findAll(sortBy: string, sortOrder: 'asc' | 'desc'): Promise<ComercialReq[]> {
+    const order = sortOrder === 'asc' ? 1 : -1;
+    return this.comercialReqModel.find().sort({ [sortBy]: order }).exec();
   }
 
   findOne(id: number) {

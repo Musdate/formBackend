@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, UseGuards, Query } from '@nestjs/common';
 import { GenericReqService } from './generic-req.service';
 import { CreateGenericReqDto } from './dto';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 
 @Controller('generic-req')
@@ -15,8 +16,10 @@ export class GenericReqController {
 
   @Get()
   // @UseGuards( AuthGuard )
-  findAll() {
-    return this.genericReqService.findAll();
+  findAll(
+    @Query('sortBy') sortBy: string,
+    @Query('sortOrder') sortOrder: 'asc' | 'desc' = 'asc') {
+    return this.genericReqService.findAll(sortBy, sortOrder);
   }
 
   @Get(':id')

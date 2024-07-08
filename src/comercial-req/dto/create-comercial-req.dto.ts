@@ -10,6 +10,9 @@ export class CreateComercialReqDto {
     productos: Producto[];
     
     @IsString()
+    solicitante: string;
+    
+    @IsString()
     fechaEnvio: string;
     
     @IsString()

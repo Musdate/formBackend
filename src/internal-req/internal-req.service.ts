@@ -31,8 +31,9 @@ export class InternalReqService {
 
   }
 
-  findAll(): Promise<InternalReq[]> {
-    return this.internalReqModel.find();
+  findAll(sortBy: string, sortOrder: 'asc' | 'desc'): Promise<InternalReq[]> {
+    const order = sortOrder === 'asc' ? 1 : -1;
+    return this.internalReqModel.find().sort({ [sortBy]: order }).exec();
   }
 
   findOne(id: number) {

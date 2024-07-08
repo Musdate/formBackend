@@ -1,6 +1,7 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Query } from '@nestjs/common';
 import { InternalReqService } from './internal-req.service';
 import { CreateInternalReqDto } from './dto';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 
 @Controller('internal-req')
@@ -15,8 +16,10 @@ export class InternalReqController {
 
   @Get()
   // @UseGuards( AuthGuard )
-  findAll() {
-    return this.internalReqService.findAll();
+  findAll(
+    @Query('sortBy') sortBy: string,
+    @Query('sortOrder') sortOrder: 'asc' | 'desc' = 'asc') {
+    return this.internalReqService.findAll(sortBy, sortOrder);
   }
 
   @Get(':id')

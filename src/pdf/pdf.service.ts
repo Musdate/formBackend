@@ -23,18 +23,19 @@ export class PdfService {
         doc.fontSize(12);
         doc.moveDown();
 
-        for (let i=0; i < solicitud.productos.length; i++) {
-          doc.font('Helvetica-Bold').text('Producto / Marca: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].producto || ' ');
-          doc.font('Helvetica-Bold').text('Cantidad: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].cantidad || ' ');
-          doc.font('Helvetica-Bold').text('Formato de Botella: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].formatoBotella || ' ');
-          doc.font('Helvetica-Bold').text('Tipo de Vino: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].tipoVino || ' ');
-          doc.font('Helvetica-Bold').text('Año Cosecha: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].anioCosecha || ' ');
-          doc.font('Helvetica-Bold').text('Cepa: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].cepa || ' ');
-          doc.font('Helvetica-Bold').text('Tipo de Cierre: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].tipoCierre || ' ');
-          doc.font('Helvetica-Bold').text('Etiqueta / Contra etiqueta: ', { continued: true }).font('Helvetica').text(solicitud.productos[i].etiqueta || ' ');
+        for (const producto of solicitud.productos) {
+          doc.font('Helvetica-Bold').text('Producto / Marca: ', { continued: true }).font('Helvetica').text(producto.producto || ' ');
+          doc.font('Helvetica-Bold').text('Cantidad: ', { continued: true }).font('Helvetica').text(producto.cantidad || ' ');
+          doc.font('Helvetica-Bold').text('Formato de Botella: ', { continued: true }).font('Helvetica').text(producto.formatoBotella || ' ');
+          doc.font('Helvetica-Bold').text('Tipo de Vino: ', { continued: true }).font('Helvetica').text(producto.tipoVino || ' ');
+          doc.font('Helvetica-Bold').text('Año Cosecha: ', { continued: true }).font('Helvetica').text(producto.anioCosecha || ' ');
+          doc.font('Helvetica-Bold').text('Cepa: ', { continued: true }).font('Helvetica').text(producto.cepa || ' ');
+          doc.font('Helvetica-Bold').text('Tipo de Cierre: ', { continued: true }).font('Helvetica').text(producto.tipoCierre || ' ');
+          doc.font('Helvetica-Bold').text('Etiqueta / Contra etiqueta: ', { continued: true }).font('Helvetica').text(producto.etiqueta || ' ');
           doc.moveDown();
         }
 
+        doc.font('Helvetica-Bold').text('Solicitante: ', { continued: true }).font('Helvetica').text(solicitud.solicitante || ' ');        
         doc.font('Helvetica-Bold').text('Fecha de envío: ', { continued: true }).font('Helvetica').text(solicitud.fechaEnvio || ' ');        
         doc.font('Helvetica-Bold').text('Centro de costo (C.C): ', { continued: true }).font('Helvetica').text(solicitud.centroCosto || ' ');        
         doc.font('Helvetica-Bold').text('Cuenta Contable (CTA): ', { continued: true }).font('Helvetica').text(solicitud.cuentaContable || ' ');        

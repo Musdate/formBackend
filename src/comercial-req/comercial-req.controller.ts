@@ -1,5 +1,6 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Query } from '@nestjs/common';
 import { ComercialReqService } from './comercial-req.service';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
 
 import {
   CreateComercialReqDto,
@@ -19,8 +20,10 @@ export class ComercialReqController {
 
   @Get()
   // @UseGuards( AuthGuard )
-  findAll() {
-    return this.comercialReqService.findAll();
+  findAll(
+    @Query('sortBy') sortBy: string,
+    @Query('sortOrder') sortOrder: 'asc' | 'desc' = 'asc') {
+    return this.comercialReqService.findAll(sortBy, sortOrder);
   }
 
   @Get(':id')

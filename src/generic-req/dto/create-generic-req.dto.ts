@@ -10,6 +10,9 @@ export class CreateGenericReqDto {
     productos: Producto[];
     
     @IsString()
+    solicitante: string;
+    
+    @IsString()
     fechaEnvio: string;
     
     @IsString()

@@ -13,6 +13,9 @@ export class GenericReq {
     productos: Producto[];
 
     @Prop({ required: false })
+    solicitante: string;
+
+    @Prop({ required: false })
     fechaEnvio: string;
         
     @Prop({ required: false })

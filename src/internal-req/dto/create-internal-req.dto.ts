@@ -10,6 +10,9 @@ export class CreateInternalReqDto {
     productos: Producto[];
     
     @IsString()
+    solicitante: string;
+    
+    @IsString()
     fechaEnvio: string;
     
     @IsString()
