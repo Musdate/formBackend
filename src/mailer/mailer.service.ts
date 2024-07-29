@@ -12,7 +12,8 @@ const mailList = [
     'gcastro@bphr.cl',
     'rchavez@bphr.cl',
     'vhernandez@bphr.cl',
-    'Jhernandez@bphr.cl'
+    'Jhernandez@bphr.cl',
+    'lromero@bphr.cl'
 ];
 
 @Injectable()
