@@ -57,7 +57,7 @@ export class PdfService {
         doc.font('Helvetica-Bold').text('Transporte / Despacho: ', { continued: true }).font('Helvetica').text(solicitud.despachoTransporte || ' ');        
         doc.font('Helvetica-Bold').text('Despachador: ', { continued: true }).font('Helvetica').text(solicitud.despachoRetira || ' ');        
         doc.font('Helvetica-Bold').text('AWB#: ', { continued: true }).font('Helvetica').text(solicitud.despachoAwb || ' ');        
-        doc.font('Helvetica-Bold').text('Costo de Envío: ', { continued: true }).font('Helvetica').text(solicitud.despachoCosto || ' ');        
+        doc.font('Helvetica-Bold').text('Costo de Envío: $ ', { continued: true }).font('Helvetica').text(solicitud.despachoCosto || ' ');
         //BODY
 
         const buffer = []
